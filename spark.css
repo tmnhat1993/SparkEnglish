@@ -174,7 +174,7 @@ em,.italic{ font-style:italic; }
   box-shadow:0 10px 30px -24px rgba(43,37,48,.4);
 }
 .site-header.solid{
-  background:var(--ivory);
+  background:#fff;
   border-bottom-color:var(--line);
 }
 .nav{ display:flex; align-items:center; gap:2rem; height:74px; }
