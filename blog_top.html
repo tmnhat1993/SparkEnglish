@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog | Spark English Center — Reading, Phonics &amp; Academic English for Parents</title>
+<meta name="description" content="Practical, research-backed guidance for parents of children in Ho Chi Minh City's international and bilingual schools — phonics, reading, IELTS, IB English and school readiness." />
+<link rel="canonical" href="https://sparkenglishcenter.vn/blog" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Spark English Center" />
+<meta property="og:title" content="Spark English Center Blog" />
+<meta property="og:description" content="Practical, research-backed guidance for parents on reading, phonics, IELTS, IB English and school readiness." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="spark.css" />
+<link rel="stylesheet" href="blog.css" />
+<link rel="stylesheet" href="site.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sparkenglishcenter.vn/"},{"@type":"ListItem","position":2,"name":"Blog"}]}
+</script>
+<style>
+.blog-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between;margin-top:clamp(28px,3vw,40px)}
+.blog-search{position:relative;flex:1;min-width:220px;max-width:360px}
+.blog-search input{width:100%;padding:.75rem 1rem .75rem 2.6rem;border:1px solid var(--line);border-radius:999px;background:var(--paper);font:inherit;font-size:.92rem;color:var(--ink)}
+.blog-search input:focus{outline:none;border-color:var(--purple)}
+.blog-search svg{position:absolute;left:.95rem;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--ink-faint)}
+.blog-filters{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);font-size:.82rem;font-weight:600;padding:.45rem 1rem;border-radius:999px;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+.chip:hover{border-color:var(--purple);color:var(--purple)}
+.chip.active{background:var(--purple);border-color:var(--purple);color:#fff}
+.blog-count{margin-top:1.1rem;font-size:.85rem;color:var(--ink-faint)}
+.post-grid{grid-template-columns:repeat(3,1fr);align-items:stretch}
+.post-card{display:none}
+.post-card.show{display:flex}
+.post-card .pc-cat{display:flex;align-items:center;gap:.4em}
+.featured-tag{display:inline-flex;align-items:center;gap:.35em;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:var(--purple-tint);padding:.28em .7em;border-radius:999px;margin-bottom:.6rem}
+@media (max-width:960px){.post-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.post-grid{grid-template-columns:1fr}}
+.no-results{display:none;text-align:center;padding:clamp(48px,6vw,72px) 0;color:var(--ink-faint)}
+.no-results.show{display:block}
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#320D37">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#320D37" />
+    <path d="M600 250 C612 380 712 478 838 490 C712 502 612 600 600 730 C588 600 488 502 362 490 C488 478 588 380 600 250 Z" fill="#C7A659" />
+    <text x="600" y="620" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700" letter-spacing="14" fill="#FBF7F0">SPARK</text>
+  </svg>
+</template>
+
+<header class="site-header solid" id="top">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Spark English Center home">
+      <img class="logo-white" src="assets/logo-white.png" alt="Spark English Center" />
+      <img class="logo-purple" src="assets/logo-purple.png" alt="Spark English Center" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <div class="nav-item">
+        <a href="about_top.html">About<span class="care"></span></a>
+        <div class="nav-drop">
+          <a href="about_our-story.html">Our Story</a>
+          <a href="about_the-spark-method.html">The Spark Method</a>
+          <a href="about_english-support.html">English Support</a>
+          <a href="about_class-size.html">Why Class Size Matters</a>
+          <a href="about_community.html">Community</a>
+          <a href="about_joe-evans.html">Meet Joe Evans</a>
+        </div>
+      </div>
+      <a href="assessment.html">Assessment</a>
+      <div class="nav-item">
+        <a href="programs_top.html">Programs<span class="care"></span></a>
+        <div class="nav-drop">
+          <a href="programs_phonics.html">Phonics &amp; Literacy</a>
+          <a href="programs_esl.html">ESL Program</a>
+          <a href="programs_ib-english.html">IB English</a>
+          <a href="programs_ielts-program.html">IELTS Success</a>
+          <a href="programs_policy.html">Enrollment Policies</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="exclusive_top.html">Exclusive<span class="care"></span></a>
+        <div class="nav-drop">
+          <a href="exclusive_teachers-corner_top.html">Teacher's Corner</a>
+          <a href="exclusive_teachers-corner_ask-a-teacher.html">Ask a Teacher</a>
+          <a href="exclusive_teachers-corner_teacher-blogs.html">Teacher Blogs</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+      <a href="blog_top.html" aria-current="page">Blog</a>
+    </nav>
+    <a href="assessment.html" class="btn btn-primary btn-sm nav-cta">Book Assessment</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mnav" id="mnav">
+  <div class="mnav__scrim" data-close></div>
+  <div class="mnav__panel">
+    <div class="mnav__top">
+      <img src="assets/logo-purple.png" alt="Spark English Center" />
+      <button class="mnav__close" data-close aria-label="Close menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav class="mnav__links" aria-label="Mobile">
+      <a href="index.html" data-close>Home</a>
+      <details class="mnav-group">
+        <summary>About<span class="chev"></span></summary>
+        <div class="mnav-sub">
+          <a href="about_our-story.html" data-close>Our Story</a>
+          <a href="about_the-spark-method.html" data-close>The Spark Method</a>
+          <a href="about_english-support.html" data-close>English Support</a>
+          <a href="about_class-size.html" data-close>Why Class Size Matters</a>
+          <a href="about_community.html" data-close>Community</a>
+          <a href="about_joe-evans.html" data-close>Meet Joe Evans</a>
+        </div>
+      </details>
+      <a href="assessment.html" data-close>Assessment</a>
+      <details class="mnav-group">
+        <summary>Programs<span class="chev"></span></summary>
+        <div class="mnav-sub">
+          <a href="programs_phonics.html" data-close>Phonics &amp; Literacy</a>
+          <a href="programs_esl.html" data-close>ESL Program</a>
+          <a href="programs_ib-english.html" data-close>IB English</a>
+          <a href="programs_ielts-program.html" data-close>IELTS Success</a>
+          <a href="programs_policy.html" data-close>Enrollment Policies</a>
+        </div>
+      </details>
+      <details class="mnav-group">
+        <summary>Exclusive<span class="chev"></span></summary>
+        <div class="mnav-sub">
+          <a href="exclusive_teachers-corner_top.html" data-close>Teacher's Corner</a>
+          <a href="exclusive_teachers-corner_ask-a-teacher.html" data-close>Ask a Teacher</a>
+          <a href="exclusive_teachers-corner_teacher-blogs.html" data-close>Teacher Blogs</a>
+        </div>
+      </details>
+      <a href="contact.html" data-close>Contact</a>
+      <a href="blog_top.html" data-close>Blog</a>
+    </nav>
+    <a href="assessment.html" class="btn btn-primary" data-close>Book a Free Assessment</a>
+  </div>
+</div>
+
+<div class="page-top"></div>
+
+<section class="hero hero--page center short" aria-label="Spark Blog">
+  <div class="hero-bg"><img src="assets/img/real/exclusivetop-kids-writing.jpg" alt="A Spark student concentrating on handwriting practice in a bright classroom" /></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">Spark Blog</span>
+        <h1>Guidance for Parents Raising Confident Readers &amp; Writers</h1>
+        <p class="lead">Practical, research-backed articles from Spark's teaching team — on phonics, reading, exam prep and academic English in Ho Chi Minh City's international-school world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="crumb-bar"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page"><span class="sep">/</span>Blog</li></ol></nav></div></div>
+
+<main>
+<section class="section">
+  <div class="container">
+
+    <div class="blog-toolbar">
+      <div class="blog-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="search" id="blogSearch" placeholder="Search articles…" aria-label="Search the blog" />
+      </div>
+      <div class="blog-filters" id="blogFilters" role="group" aria-label="Filter by topic">
+        <button class="chip active" data-filter="all">All Topics</button>
+        <button class="chip" data-filter="reading">Reading &amp; Literacy</button>
+        <button class="chip" data-filter="phonics">Phonics</button>
+        <button class="chip" data-filter="readiness">School Readiness</button>
+        <button class="chip" data-filter="esl">ESL &amp; Academic English</button>
+        <button class="chip" data-filter="ib">IB English</button>
+        <button class="chip" data-filter="ielts">IELTS</button>
+        <button class="chip" data-filter="community">Parenting &amp; Community</button>
+      </div>
+    </div>
+    <p class="blog-count" id="blogCount"></p>
+
+    <div class="post-grid" id="postGrid">
+
+      <article class="post-card" data-cat="reading" data-title="The Small Habits That Create Strong Readers">
+        <a class="thumb" href="Spark English Center - Blog Detail.html" aria-label="The Small Habits That Create Strong Readers">
+          <img src="https://images.unsplash.com/photo-1759977064094-840dfc694bee?w=900&q=72&auto=format&fit=crop" alt="Two young children reading picture books together at a wooden table" loading="lazy" />
+        </a>
+        <div class="pc-body">
+          <span class="featured-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.2-6.3-4.5-6.3 4.5 2.3-7.2-6-4.4h7.6z"/></svg>Editor's pick</span>
+          <span class="pc-cat">Reading &amp; Literacy</span>
+          <h3><a href="Spark English Center - Blog Detail.html">The Small Habits That Create Strong Readers</a></h3>
+          <p class="pc-ex">Strong readers are built through small daily habits, not occasional effort. A reading specialist explains the five home routines that turn fluent speakers into confident readers.</p>
+          <span class="pc-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>8 min read</span>
+        </div>
+      </article>
+
+      <article class="post-card" data-cat="phonics" data-title="5 Signs Your Child Needs Phonics HCMC Guide">
+        <a class="thumb" href="programs_phonics.html" aria-label="5 Signs Your Child Needs Phonics">
+          <img src="assets/img/campus-reading.jpg" alt="A young student practicing phonics with letter cards" loading="lazy" />
+        </a>
+        <div class="pc-body">
+          <span class="pc-cat">Phonics</span>
+          <h3><a href="programs_phonics.html">5 Signs Your Child Needs Phonics (HCMC Guide)</a></h3>
+          <p class="pc-ex">Struggling with reading or spelling despite fluent conversation? Five clear signs your child needs structured phonics — not just more vocabulary.</p>
+          <span class="pc-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>6 min read</span>
+        </div>
+      </article>
+
+      <article class="post-card" data-cat="esl reading" data-title="Good at English but Cant Read A Parent Guide">
+        <a class="thumb" href="programs_esl.html" aria-label="Good at English but Can't Read">
+          <img src="assets/img/real/exclusivetop-kids-writing.jpg" alt="A child concentrating on written work at a classroom desk" loading="lazy" />
+        </a>
+        <div class="pc-body">
+          <span class="pc-cat">ESL &amp; Academic English</span>
+          <h3><a href="programs_esl.html">Good at English but Can't Read? The Immersion Trap</a></h3>
+          <p class="pc-ex">Your child speaks English confidently — but reading and writing lag behind. Why this happens in international schools, and how to close the gap.</p>
+          <span class="pc-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>7 min read</span>
+        </div>
+      </article>
+
+      <article class="post-card" data-cat="readiness" data-title="Reading Skills Needed Before Grade 3">
+        <a class="thumb" href="about_english-support.html" aria-label="Reading Skills Needed Before Grade 3">
+          <img src="https://images.unsplash.com/photo-1636202339022-7d67f7447e3a?w=1200&q=72&auto=format&fit=crop" alt="A calm, well-organised classroom with bookshelves and student desks" loading="lazy" />
+        </a>
+        <div class="pc-body">
+          <span class="pc-cat">School Readiness</span>
+          <h3><a href="about_english-support.html">Reading Skills Your Child Needs Before Grade 3</a></h3>
+          <p class="pc-ex">What should a child be able to read and write by the end of Grade 2? A clear, practical checklist for international-school parents.</p>
+          <span class="pc-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>5 min read</span>
+        </div>
+      </article>
+
+      <article class="post-card" data-cat="ielts" data-title="IELTS Writing Band 7.5 Secrets Real Strategies">
+        <a class="thumb" href="programs_ielts-program.html" aria-label="IELTS Writing Band 7.5+ Secrets">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=900&q=72&auto=format&fit=crop" alt="A teenage student writing notes during focused study" loading="lazy" />
+        </a>
+        <div class="pc-body">
+          <span class="pc-cat">IELTS</span>
+          <h3><a href="programs_ielts-program.html">IELTS Writing Band 7.5+: What Actually Moves the Score</a></h3>
+          <p class="pc-ex">Why self-study plateaus below Band 7 — and the structured feedback strategies that push academic writing scores higher.</p>
+          <span class="pc-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>7 min read</span>
+        </div>
+      </article>
+
+      <article class="post-card" data-cat="ib" data-title="What IB English Really Expects From Middle Schoolers">
+        <a class="thumb" href="programs_ib-english.html" aria-label="What IB English Really Expects">
+          <img src="assets/img/real/ib-girl-drawing.jpg" alt="A student engaged in a creative, language-rich classroom activity" loading="lazy" />
+        </a>
+        <div class="pc-body">
+          <span class="pc-cat">IB English</span>
+          <h3><a href="programs_ib-english.html">What IB English Really Expects From Middle Schoolers</a></h3>
+          <p class="pc-ex">Conceptual understanding, textual analysis, oral commentary — what changes when a child moves into IB English, and how to prepare early.</p>
+          <span class="pc-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>6 min read</span>
+        </div>
+      </article>
+
+      <article class="post-card" data-cat="community" data-title="Inside a Spark Classroom A Day With Four to Six Students">
+        <a class="thumb" href="about_class-size.html" aria-label="Inside a Spark Classroom">
+          <img src="assets/img/campus-group.jpg" alt="A small group of students working closely with a Spark teacher" loading="lazy" />
+        </a>
+        <div class="pc-body">
+          <span class="pc-cat">Parenting &amp; Community</span>
+          <h3><a href="about_class-size.html">Inside a Spark Classroom: A Day With Four to Six Students</a></h3>
+          <p class="pc-ex">What small-group teaching actually looks like — and why 20–25 individual feedback moments per lesson change how quickly children improve.</p>
+          <span class="pc-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>4 min read</span>
+        </div>
+      </article>
+
+      <article class="post-card" data-cat="community readiness" data-title="How to Talk to Your Schools English Teacher About Support">
+        <a class="thumb" href="exclusive_teachers-corner_ask-a-teacher.html" aria-label="How to Talk to Your School About English Support">
+          <img src="assets/img/real/ask-teacher-boy-writing.jpg" alt="A parent-style conversation moment with a young student writing" loading="lazy" />
+        </a>
+        <div class="pc-body">
+          <span class="pc-cat">Parenting &amp; Community</span>
+          <h3><a href="exclusive_teachers-corner_ask-a-teacher.html">How to Talk to Your School About English Support</a></h3>
+          <p class="pc-ex">The right questions to ask a homeroom or EAL teacher — and how to tell the difference between a temporary dip and a real reading gap.</p>
+          <span class="pc-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>5 min read</span>
+        </div>
+      </article>
+
+      <article class="post-card" data-cat="phonics reading" data-title="Why Sight Word Memorising Stops Working">
+        <a class="thumb" href="programs_phonics.html" aria-label="Why Sight-Word Memorising Stops Working">
+          <img src="https://images.unsplash.com/photo-1597392582469-a697322d5c16?w=900&q=72&auto=format&fit=crop" alt="Movable letter tiles used for phonics and word-building practice" loading="lazy" />
+        </a>
+        <div class="pc-body">
+          <span class="pc-cat">Phonics</span>
+          <h3><a href="programs_phonics.html">Why Sight-Word Memorising Stops Working</a></h3>
+          <p class="pc-ex">Whole-word memorising can look like reading in the early years — until books get longer and pictures disappear. Why decoding is what actually scales.</p>
+          <span class="pc-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>6 min read</span>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="no-results" id="noResults">No articles match your search or filter yet. Try a different topic, or <a href="contact.html">ask us directly</a>.</p>
+
+  </div>
+</section>
+
+<section class="section assess bg-purple cta-band" aria-label="Book a free assessment">
+  <div class="container">
+    <span class="eyebrow">Your child's next step</span>
+    <h2>Ready to understand your child's academic English level?</h2>
+    <p class="lead">Book a free Spark Readiness Assessment — a calm, one-to-one evaluation that pinpoints exactly where your child stands, and what comes next.</p>
+    <div class="cta-row">
+      <a href="assessment.html" class="btn btn-gold btn-lg">Book a Free Assessment</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="index.html"><img src="assets/logo-white.png" alt="Spark English Center" /></a>
+        <p class="footer-about">A premium boutique English center in Thao Dien — bridging the gap from conversational English to true academic mastery.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about_top.html">About Spark</a></li>
+          <li><a href="about_the-spark-method.html">The Spark Method</a></li>
+          <li><a href="exclusive_top.html">Exclusive</a></li>
+          <li><a href="blog_top.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs_phonics.html">Phonics &amp; Literacy</a></li>
+          <li><a href="programs_ib-english.html">IB English</a></li>
+          <li><a href="programs_esl.html">ESL Academic</a></li>
+          <li><a href="programs_ielts-program.html">IELTS Success</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Spark</h4>
+        <ul>
+          <li>204B7/12 Nguyen Van Huong,<br />Thao Dien, HCMC</li>
+          <li><a href="tel:0398143487">0398 143 487</a></li>
+          <li><a href="mailto:sparkalcvn@gmail.com">sparkalcvn@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="yr">2026</span> Spark English Center. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1.4-3 3.3V11H8v3h3v7h3v-7h2.5l.5-3H14V9.6c0-.4.3-.6.7-.6z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3-.4-4.4a2.6 2.6 0 0 0-1.8-1.8C18.4 5.4 12 5.4 12 5.4s-6.4 0-7.8.4A2.6 2.6 0 0 0 2.4 7.6C2 9 2 12 2 12s0 3 .4 4.4a2.6 2.6 0 0 0 1.8 1.8c1.4.4 7.8.4 7.8.4s6.4 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8C22 15 22 12 22 12zm-12 2.8V9.2L15 12z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="spark.js"></script>
+<script src="site.js"></script>
+<script src="blog.js"></script>
+<script>
+(function(){
+  var cards=Array.prototype.slice.call(document.querySelectorAll('#postGrid .post-card'));
+  var chips=Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var search=document.getElementById('blogSearch');
+  var count=document.getElementById('blogCount');
+  var noResults=document.getElementById('noResults');
+  var activeFilter='all';
+  function apply(){
+    var q=search.value.trim().toLowerCase();
+    var shown=0;
+    cards.forEach(function(c){
+      var cats=(c.dataset.cat||'').split(' ');
+      var matchesFilter=activeFilter==='all'||cats.indexOf(activeFilter)!==-1;
+      var matchesSearch=!q||(c.dataset.title||'').toLowerCase().indexOf(q)!==-1||c.textContent.toLowerCase().indexOf(q)!==-1;
+      var show=matchesFilter&&matchesSearch;
+      c.classList.toggle('show',show);
+      if(show)shown++;
+    });
+    count.textContent=shown+(shown===1?' article':' articles')+(activeFilter!=='all'?' in this topic':'');
+    noResults.classList.toggle('show',shown===0);
+  }
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      chips.forEach(function(c){c.classList.remove('active')});
+      chip.classList.add('active');
+      activeFilter=chip.dataset.filter;
+      apply();
+    });
+  });
+  search.addEventListener('input',apply);
+  apply();
+})();
+</script>
+</body>
+</html>

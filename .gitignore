@@ -1,0 +1,16 @@
+# Local reference exports and QA artifacts (not required by the deployed site)
+.thumbnail
+DESIGN-NOTES.md
+QA-NOTES.md
+RESPONSIVE-CHECKLIST.md
+index-print.html
+Spark English Center - Homepage.html
+screenshots/
+uploads/
+tweaks-app.jsx
+tweaks-panel.jsx
+contact3.png
+
+# Local tooling
+.DS_Store
+node_modules/
