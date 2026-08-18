@@ -14,3 +14,4 @@ contact3.png
 # Local tooling
 .DS_Store
 node_modules/
+option-toolbar-*.html

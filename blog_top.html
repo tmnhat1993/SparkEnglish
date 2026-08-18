@@ -21,23 +21,23 @@
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sparkenglishcenter.vn/"},{"@type":"ListItem","position":2,"name":"Blog"}]}
 </script>
 <style>
-.blog-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between;margin-top:clamp(28px,3vw,40px)}
-.blog-search{position:relative;flex:1;min-width:220px;max-width:360px}
-.blog-search input{width:100%;padding:.75rem 1rem .75rem 2.6rem;border:1px solid var(--line);border-radius:999px;background:var(--paper);font:inherit;font-size:.92rem;color:var(--ink)}
+.blog-toolbar{margin-top:0;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+.blog-search{position:relative;width:100%;max-width:560px}
+.blog-search input{width:100%;height:56px;padding:0 1.2rem 0 3.1rem;border:1px solid var(--line);border-radius:999px;background:var(--paper);font:inherit;font-size:1rem;color:var(--ink);box-shadow:var(--shadow-sm)}
 .blog-search input:focus{outline:none;border-color:var(--purple)}
-.blog-search svg{position:absolute;left:.95rem;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--ink-faint)}
-.blog-filters{display:flex;flex-wrap:wrap;gap:.5rem}
-.chip{border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);font-size:.82rem;font-weight:600;padding:.45rem 1rem;border-radius:999px;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+.blog-search svg{position:absolute;left:1.2rem;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--ink-faint)}
+.blog-filters{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.chip{border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);font-size:.85rem;font-weight:600;padding:.55rem 1.05rem;border-radius:999px;cursor:pointer;transition:all .2s ease;white-space:nowrap}
 .chip:hover{border-color:var(--purple);color:var(--purple)}
 .chip.active{background:var(--purple);border-color:var(--purple);color:#fff}
-.blog-count{margin-top:1.1rem;font-size:.85rem;color:var(--ink-faint)}
-.post-grid{grid-template-columns:repeat(3,1fr);align-items:stretch}
+.blog-count{font-size:.82rem;color:var(--ink-faint);white-space:nowrap}
+.post-grid{grid-template-columns:repeat(3,1fr);align-items:stretch;margin-top:clamp(24px,2.8vw,34px)}
 .post-card{display:none}
 .post-card.show{display:flex}
 .post-card .pc-cat{display:flex;align-items:center;gap:.4em}
 .featured-tag{display:inline-flex;align-items:center;gap:.35em;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:var(--purple-tint);padding:.28em .7em;border-radius:999px;margin-bottom:.6rem}
 @media (max-width:960px){.post-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.post-grid{grid-template-columns:1fr}}
+@media (max-width:600px){.post-grid{grid-template-columns:1fr}.blog-search input{height:52px;font-size:.95rem}}
 .no-results{display:none;text-align:center;padding:clamp(48px,6vw,72px) 0;color:var(--ink-faint)}
 .no-results.show{display:block}
 </style>
@@ -172,7 +172,7 @@
     <div class="blog-toolbar">
       <div class="blog-search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-        <input type="search" id="blogSearch" placeholder="Search articles…" aria-label="Search the blog" />
+        <input type="search" id="blogSearch" placeholder="Search articles by topic, keyword or exam…" aria-label="Search the blog" />
       </div>
       <div class="blog-filters" id="blogFilters" role="group" aria-label="Filter by topic">
         <button class="chip active" data-filter="all">All Topics</button>
@@ -184,8 +184,8 @@
         <button class="chip" data-filter="ielts">IELTS</button>
         <button class="chip" data-filter="community">Parenting &amp; Community</button>
       </div>
+      <p class="blog-count" id="blogCount"></p>
     </div>
-    <p class="blog-count" id="blogCount"></p>
 
     <div class="post-grid" id="postGrid">
 
@@ -302,6 +302,8 @@
 
     <p class="no-results" id="noResults">No articles match your search or filter yet. Try a different topic, or <a href="contact.html">ask us directly</a>.</p>
 
+    <nav class="pagination" id="pagination" aria-label="Blog pagination"></nav>
+
   </div>
 </section>
 
@@ -367,35 +369,72 @@
 <script src="blog.js"></script>
 <script>
 (function(){
+  var PAGE_SIZE=6;
   var cards=Array.prototype.slice.call(document.querySelectorAll('#postGrid .post-card'));
   var chips=Array.prototype.slice.call(document.querySelectorAll('.chip'));
   var search=document.getElementById('blogSearch');
   var count=document.getElementById('blogCount');
   var noResults=document.getElementById('noResults');
+  var pagination=document.getElementById('pagination');
   var activeFilter='all';
-  function apply(){
+  var page=1;
+  function matched(){
     var q=search.value.trim().toLowerCase();
-    var shown=0;
-    cards.forEach(function(c){
+    return cards.filter(function(c){
       var cats=(c.dataset.cat||'').split(' ');
       var matchesFilter=activeFilter==='all'||cats.indexOf(activeFilter)!==-1;
       var matchesSearch=!q||(c.dataset.title||'').toLowerCase().indexOf(q)!==-1||c.textContent.toLowerCase().indexOf(q)!==-1;
-      var show=matchesFilter&&matchesSearch;
-      c.classList.toggle('show',show);
-      if(show)shown++;
+      return matchesFilter&&matchesSearch;
     });
-    count.textContent=shown+(shown===1?' article':' articles')+(activeFilter!=='all'?' in this topic':'');
-    noResults.classList.toggle('show',shown===0);
+  }
+  function renderPagination(total){
+    var pages=Math.ceil(total/PAGE_SIZE);
+    pagination.innerHTML='';
+    pagination.classList.toggle('hide',pages<=1);
+    if(pages<=1)return;
+    var prev=document.createElement('button');
+    prev.className='page-btn nav';
+    prev.disabled=page===1;
+    prev.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Prev';
+    prev.addEventListener('click',function(){page--;apply();});
+    pagination.appendChild(prev);
+    for(var i=1;i<=pages;i++){
+      (function(n){
+        var b=document.createElement('button');
+        b.className='page-btn'+(n===page?' active':'');
+        b.textContent=n;
+        b.addEventListener('click',function(){page=n;apply();});
+        pagination.appendChild(b);
+      })(i);
+    }
+    var next=document.createElement('button');
+    next.className='page-btn nav';
+    next.disabled=page===pages;
+    next.innerHTML='Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+    next.addEventListener('click',function(){page++;apply();});
+    pagination.appendChild(next);
+  }
+  function apply(){
+    var results=matched();
+    var pages=Math.max(1,Math.ceil(results.length/PAGE_SIZE));
+    if(page>pages)page=pages;
+    var start=(page-1)*PAGE_SIZE;
+    var pageSet=results.slice(start,start+PAGE_SIZE);
+    cards.forEach(function(c){c.classList.toggle('show',pageSet.indexOf(c)!==-1);});
+    count.textContent=results.length+(results.length===1?' article':' articles')+(activeFilter!=='all'?' in this topic':'');
+    noResults.classList.toggle('show',results.length===0);
+    renderPagination(results.length);
   }
   chips.forEach(function(chip){
     chip.addEventListener('click',function(){
       chips.forEach(function(c){c.classList.remove('active')});
       chip.classList.add('active');
       activeFilter=chip.dataset.filter;
+      page=1;
       apply();
     });
   });
-  search.addEventListener('input',apply);
+  search.addEventListener('input',function(){page=1;apply();});
   apply();
 })();
 </script>

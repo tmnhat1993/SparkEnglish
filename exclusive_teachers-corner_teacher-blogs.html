@@ -235,6 +235,7 @@
         </div>
       </article>
     </div>
+    <nav class="pagination" id="tbPagination" aria-label="Teacher blogs pagination"></nav>
 
     <h2 style="margin-top:clamp(56px,6vw,80px);text-align:center">What You'll Find Here</h2>
     <div class="info-grid" style="margin-top:2rem">
@@ -318,5 +319,38 @@
 <script src="spark.js"></script>
 <script src="site.js"></script>
 <script src="blog.js"></script>
+<script>
+(function(){
+  var PAGE_SIZE=6;
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.post-grid .post-card'));
+  var pagination=document.getElementById('tbPagination');
+  if(!pagination||cards.length<=PAGE_SIZE)return;
+  var page=1;
+  function render(){
+    var pages=Math.ceil(cards.length/PAGE_SIZE);
+    var start=(page-1)*PAGE_SIZE;
+    cards.forEach(function(c,i){c.style.display=(i>=start&&i<start+PAGE_SIZE)?'flex':'none';});
+    pagination.innerHTML='';
+    var prev=document.createElement('button');
+    prev.className='page-btn nav';prev.disabled=page===1;
+    prev.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Prev';
+    prev.addEventListener('click',function(){page--;render();});
+    pagination.appendChild(prev);
+    for(var i=1;i<=pages;i++){(function(n){
+      var b=document.createElement('button');
+      b.className='page-btn'+(n===page?' active':'');
+      b.textContent=n;
+      b.addEventListener('click',function(){page=n;render();});
+      pagination.appendChild(b);
+    })(i);}
+    var next=document.createElement('button');
+    next.className='page-btn nav';next.disabled=page===pages;
+    next.innerHTML='Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+    next.addEventListener('click',function(){page++;render();});
+    pagination.appendChild(next);
+  }
+  render();
+})();
+</script>
 </body>
 </html>
